@@ -1,0 +1,28 @@
+# ===== CANAIS MONITORADOS =====
+# Cole so o LINK do canal (Twitch, Kick ou YouTube), um por linha.
+channels:
+  - https://www.twitch.tv/troque_este_canal
+  # - https://kick.com/outro_canal
+  # - https://www.youtube.com/@canal_youtube
+
+record_minutes: 40          # quanto tempo gravar por execucao (o job tem limite de ~55 min)
+max_channels_per_run: 1     # quantos canais ao vivo processar por execucao
+clips_per_run: 3            # maximo de clipes por execucao
+clip_seconds: 35            # duracao de cada clipe
+clip_pre_seconds: 24        # quanto antes do pico comeca o clipe
+min_score: 2.5              # sensibilidade (menor = mais clipes, maior = so momentos fortes)
+min_gap_seconds: 90         # distancia minima entre clipes
+chat_weight: 1.0            # peso do chat (so Twitch) na deteccao
+chat_delay_seconds: 8       # atraso entre o momento e a reacao do chat
+max_posts_per_day: 6        # limite diario de postagens (YouTube API grátis ~6 uploads/dia)
+whisper_model: base         # tiny | base | small (maior = melhor legenda, mais lento)
+quality: "720p60,720p,480p,best"
+fallback_title: "Momento insano da live de GTA VI"
+hashtags: ["#gta6", "#gtavi", "#gta", "#gaming", "#fyp"]
+
+# onde publicar (so publica se as chaves existirem nos Secrets)
+publish:
+  youtube: true
+  tiktok: true
+  instagram: true
+  telegram: true            # manda o clipe pronto no seu Telegram (plano B garantido)
